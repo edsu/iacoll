@@ -9,6 +9,6 @@ setup(
     py_modules=['iacoll', ],
     description='Collect metadata for Internet Archive collections',
     python_requires='>=3.6',
-    install_requires=['internetarchive', 'python-dateutil', 'tqdm', 'plyvel'],
+    install_requires=['internetarchive', 'tqdm', 'plyvel'],
     entry_points={'console_scripts': ['iacoll' = 'iacoll:main']}
 )

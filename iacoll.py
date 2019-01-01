@@ -20,7 +20,6 @@ import argparse
 import internetarchive as ia
 
 from tqdm import tqdm
-from dateutil.parser import parse
 
 def main():
     ap = argparse.ArgumentParser('collect Internet Archive collectian metadata')
@@ -36,6 +35,8 @@ def main():
         level=logging.INFO,
         format="%(asctime)s %(levelname)s %(message)s"
     )
+
+    check_credentials()
 
     if args.db:
         db_path = args.db
@@ -54,20 +55,32 @@ def main():
         logging.info('no new items in %s', args.collection_id)
         sys.exit()
 
-    if args.fullscan:
-        progress = tqdm(total=total_items, unit='records')
-        progress.update(total_items_saved)
-    else:
-        progress = tqdm(total=total_items - total_items_saved, unit='records')
+    progress = tqdm(total=total_items, unit='records')
+    progress.update(total_items_saved)
 
     try:
+        count = 0
         for item in get_items(args.collection_id, db, args.fullscan):
             progress.update(1)
+            count += 1
     except KeyboardInterrupt:
-        pass
+        sys.exit()
 
     progress.close()
     db.close()
+
+    if total_items_saved + count != total_items:
+        print("\nIt looks like one of your previous runs failed to complete, please use --fullscan to synchronize.\n")
+
+
+def check_credentials():
+    session = ia.get_session()
+    if session.access_key and session.secret_key:
+        return
+    print('I need your Internet Archive account login to fetch your API credentials. The username/password are not stored.')
+    email = input('email address: ')
+    password = input('password: ')
+    ia.configure(email, password)
 
 def get_item_count(coll_id):
     return len(ia.search_items('collection:%s' % coll_id))
