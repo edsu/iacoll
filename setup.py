@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setup(
     name='iacoll',
-    version='0.0.1',
+    version='0.0.2',
     url='https://github.com/edsu/iacoll',
     author='Ed Summers',
     author_email='ehs@pobox.com',
@@ -15,5 +15,5 @@ setup(
     long_description_content_type="text/markdown",
     python_requires='>=3.6',
     install_requires=['internetarchive', 'tqdm', 'plyvel'],
-    entry_points={'console_scripts': ['iacoll' = 'iacoll:main']}
+    entry_points={'console_scripts': ['iacoll = iacoll:main']}
 )
