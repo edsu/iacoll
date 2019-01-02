@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setup(
     name='iacoll',
-    version='0.0.2',
+    version='0.0.3',
     url='https://github.com/edsu/iacoll',
     author='Ed Summers',
     author_email='ehs@pobox.com',
