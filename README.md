@@ -6,6 +6,14 @@ key/value store where the key is the unique Internet Archive item identifier,
 and the value is the JSON for the item metadata. Having the data stored this way
 allows it to be easily kept up to date.
 
+## Install
+
+To install *iacoll* you'll first need to install Python and then:
+
+    pip install iacoll
+
+## Usage
+
 For example you can download the metadata for items in the University of
 Maryland's collection:
 
@@ -26,8 +34,3 @@ If you would like to dump the metadata as line oriented JSON you can use --dump:
 
     % iacoll university_maryland_cp --dump > university_maryland_cp.jsonl
 
-## Install
-
-To install *iacoll* you'll first need to install Python and then:
-
-    pip install iacoll
