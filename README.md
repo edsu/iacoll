@@ -10,8 +10,8 @@ allows it to be easily kept up to date.
 
 To install *iacoll* you'll first need to install Python and LevelDB. 
 
-    brew intall python3 leveldb
-    pip install iacoll
+    % brew intall python3 leveldb
+    % pip install iacoll
 
 ## Usage
 
