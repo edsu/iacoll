@@ -15,8 +15,8 @@ To install *iacoll* you'll first need to install Python and LevelDB.
 
 ## Usage
 
-For example you can download the metadata for items in the University of
-Maryland's collection:
+Here's an example of using *iacoll* to harvest the metadata for items in the
+University of Maryland's collection:
 [univerity_maryland_cp](https://archive.org/details/university_maryland_cp):
 
     % iacoll university_maryland_cp 
