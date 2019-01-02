@@ -3,7 +3,8 @@
 *iacoll* allows you to regularly harvest the item metadata in an Internet
 Archive collection and store it in a LevelDB database. The database is a
 key/value store where the key is the unique Internet Archive item identifier,
-and the value is the JSON for the item metadata.
+and the value is the JSON for the item metadata. Having the data stored this way
+allows it to be easily kept up to date.
 
 For example you can download the metadata for items in the University of
 Maryland's collection:
