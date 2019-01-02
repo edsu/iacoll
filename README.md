@@ -1,6 +1,6 @@
 # iacoll
 
-*iacoll* allows you to regularly harvest the item metadata for an Internet
+*iacoll* allows you to regularly harvest the item metadata in an Internet
 Archive collection and store it in a LevelDB database. The database is a
 key/value store where the key is the unique Internet Archive item identifier,
 and the value is the JSON for the item metadata.
