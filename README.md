@@ -14,8 +14,7 @@ To install *iacoll* you'll first need to install Python and then:
 
 ## Usage
 
-For example you can download the metadata for items in the University of
-Maryland's collection:
+For example you can download the metadata for items in the [University of Maryland's collection](https://archive.org/details/university_maryland_cp_frenchpamphlets):
 
     % iacoll university_maryland_cp 
 
