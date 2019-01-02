@@ -114,7 +114,8 @@ def get_item_key(id):
 
 def dump(db):
     for k, v in db.iterator(start=b'iacoll:item:', stop=b'iacoll:item;'):
-        sys.stdout.write(v.decode('utf8') + '\n')
+        if str(k).startswith('iacoll:item:'):
+            sys.stdout.write(v.decode('utf8') + '\n')
 
 if __name__  == "__main__":
     main()
