@@ -4,7 +4,10 @@
 Archive collection and store it in a LevelDB database. The database is a
 key/value store where the key is the unique Internet Archive item identifier,
 and the value is the JSON for the item metadata. Having the data stored this way
-allows it to be easily kept up to date.
+allows it to be easily kept up to date. Maybe it should use a JSON aware
+database instead, so the metadata itself can be queried. If you think so and
+have opinions about what database to use please 
+[let me know](https://github.com/edsu/iacoll/issues).
 
 ## Install
 
